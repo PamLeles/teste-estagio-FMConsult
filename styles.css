@@ -1,66 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  justify-items: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #801a8d;
-  margin: 0;
 }
 form {
   border: 0px solid #3f1146;
   display: flex;
   width: 580px;
-  height: 250px;
   align-items: center;
   text-align: center;
   padding: 15px;
   justify-items: center;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #e7e1ec;
   border-radius: 15px;
   box-shadow: 6px 6px 18px 10px #3f1146;
   color: #3f1146;
-  margin: 0;
 }
-.form-title {
+h1 {
+  font-family: "Signika", sans-serif;
+  font-size: 30px;
   display: flex;
-  border-bottom: 1px solid #000000;
-  width: 609px;
+  border-bottom: 1px solid #d4d1d1;
+  width: 100%;
   text-align: center;
   align-items: center;
   justify-content: center;
-  height: 40px;
   padding: 3px;
-  margin: 0;
 }
-.form-data {
+div {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 200px;
+  height: 185px;
+  width: 530px;
   padding: 5px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   justify-items: center;
+  column-gap: 25px;
 }
 label {
   display: flex;
 }
 input {
+  width: 160px;
+  height: 25px;
+  margin-left: 5px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #3f1146;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.input-number {
+  width: 50px;
+}
+select {
   width: 100px;
+  height: 25px;
   border-radius: 5px;
   border: 1px solid #939393;
   margin-left: 5px;
   box-sizing: border-box;
+  text-align: center;
+  align-items: center;
 }
-
-.btn-save {
-  background-color: #801a8d;
-  color: white;
+button {
   border-radius: 15px;
   border: none;
   width: 70px;
@@ -69,17 +100,103 @@ input {
   padding: 5px;
   align-items: center;
   box-shadow: 5px 3px 5px 0px #3f1146;
+  font-family: "Signika", sans-serif;
+  font-size: 15px;
+  transition: all 0.1s ease-in;
+  cursor: pointer;
 }
+button:active {
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+  transform: translateX(2px);
+}
+
+.btn-save {
+  background-color: #801a8d;
+  color: white;
+}
+
 .btn-cancel {
-  border: none;
-  border-radius: 15px;
-  text-align: center;
-  padding: 5px;
-  background-color: rgb(212, 209, 209);
-  box-shadow: 5px 3px 5px 0px #3f1146;
-  width: 70px;
-  height: 30px;
+  background-color: #fff;
+  color: #801a8d;
 }
+/* tablet*/
+@media (max-width: 1024px) {
+  form {
+    display: flex;
+    width: 75%;
+    height: 395px;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+    text-align: center;
+  }
+}
+/*mobile*/
+@media (max-width: 720px) {
+}
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  color: #d4d1d1;
+  font-family: "Signika", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 table {
-  border: 1px solid black;
+  font-family: "Signika", sans-serif;
+  background-color: #e7e1ec;
+  width: 40%;
+  border-radius: 15px;
+  border-collapse: collapse;
+  box-shadow: 6px 6px 18px 10px #3f1146;
+  color: #3f1146;
+}
+th,
+td {
+  border-right: 1px solid #3f1146;
+  padding: 15px;
+}
+thead > tr > th:last-child,
+tbody > tr > td:last-child {
+  border: none;
+}
+td {
+  text-align: center;
+}
+
+td,
+tr {
+  border-radius: 10px;
+}
+thead {
+  border-bottom: 1px solid #3f1146;
+  font-size: 18px;
+}
+tbody {
+  font-size: 16px;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+}
+footer {
+  color: #e7e1ec;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: flex-end;
 }
