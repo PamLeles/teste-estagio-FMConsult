@@ -10,28 +10,28 @@
   <body>
     <form>
       <h1 class="form-title">Formulário de Cadastro</h1>
-      <div>
-        <label>
+      <div class="label-div">
+        <label >
           CNPJ:
           <input type="number"  />
         </label>
 
-        <label>
+        <label >
           Nome da empresa:
           <input type=" text" />
         </label>
 
-        <label>
+        <label >
           CEP:
           <input type="number"  />
         </label>
 
-        <label>
+        <label >
           Endereço:
           <input type=" text" />
         </label>
 
-        <label>
+        <label >
           Número:
           <input type="number" class="input-number" />
         </label>
@@ -40,25 +40,29 @@
           Bairro:
           <input type="text" />
         </label>
+        <div class="actions-wrapper">
 
-        <label>
-          UF:
-          <select>
-            <option>SP</option>
-            <option>RJ</option>
-          </select>
-        </label>
+          <label class="label-uf-city">
+            UF:
+            <select>
+              <option>SP</option>
+              <option>RJ</option>
+            </select>
+          </label>
+  
+          <label class="label-uf-city">
+            cidade:
+            <select>
+              <option>São Paulo</option>
+              <option>Rio Janeiro</option>
+            </select>
+          </label>
+        </div>
 
-        <label>
-          cidade:
-          <select>
-            <option>São Paulo</option>
-            <option>Rio Janeiro</option>
-          </select>
-        </label>
-
-        <button class="btn-cancel">Cancelar</button>
-        <button class="btn-save">Salvar</button>
+        <div class="actions-wrapper">
+          <button class="btn-cancel">Cancelar</button>
+          <button class="btn-save">Salvar</button>
+        </div>
       </div>
     </form>
 
