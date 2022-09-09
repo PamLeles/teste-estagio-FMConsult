@@ -120,6 +120,10 @@ button:active {
   background-color: #fff;
   color: #801a8d;
 }
+.invalid-field {
+  border-color: red;
+  color: red;
+}
 @media (min-width: 1025px) {
   body {
     height: 100vh;

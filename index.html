@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,40 +8,39 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <form>
+    <form class="form">
       <h1 class="form-title">Formulário de Cadastro</h1>
       <div class="label-div">
-        <label >
+        <label>
           CNPJ:
-          <input type="number"  />
+          <input type="number" id="cnpj" required />
         </label>
 
-        <label >
+        <label>
           Nome da empresa:
-          <input type=" text" />
+          <input type=" text" id="name" required />
         </label>
 
-        <label >
+        <label>
           CEP:
-          <input type="number"  />
+          <input type="number" id="cep" required />
         </label>
 
-        <label >
+        <label>
           Endereço:
-          <input type=" text" />
+          <input type=" text" id="address" required />
         </label>
 
-        <label >
+        <label>
           Número:
-          <input type="number" class="input-number" />
+          <input type="number" class="input-number" required />
         </label>
 
         <label>
           Bairro:
-          <input type="text" />
+          <input type="text" id="district" required />
         </label>
         <div class="actions-wrapper">
-
           <label class="label-uf-city">
             UF:
             <select>
@@ -49,7 +48,7 @@
               <option>RJ</option>
             </select>
           </label>
-  
+
           <label class="label-uf-city">
             cidade:
             <select>
@@ -61,7 +60,7 @@
 
         <div class="actions-wrapper">
           <button class="btn-cancel">Cancelar</button>
-          <button class="btn-save">Salvar</button>
+          <button class="btn-save" onclick="saveForm(event)">Salvar</button>
         </div>
       </div>
     </form>
@@ -77,25 +76,9 @@
             <th>Ações</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>12345</td>
-            <td>Empresa 1</td>
-            <td><a>Edit</a></td>
-          </tr>
-          <tr>
-            <td>12345678</td>
-            <td>Empresa 2</tdee>
-            <td><a>Edit</a></td>
-          </tr>
-          <tr>
-            <td>123456789</td>
-            <td >Empresa 3</td>
-            <td><a>Edit</a></td>
-          </tr>
-        </tbody>
+        <tbody id="table-content"></tbody>
       </table>
     </section>
-    <footer><p>@Pâmela Leles</p></footer>
+    <script src="script.js"></script>
   </body>
 </html>
