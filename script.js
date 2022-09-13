@@ -53,13 +53,7 @@ function handleValidateName(name){
 }
 
 function handleValidateCep(cep){
-  const isValidCep = cep.length === 8;
-  if(!isValidCep) { 
-    addIsInvalidFieldClass('cep');
-    return false;
-  }
-  removeIsInvalidFieldClass('cep');
-  return true;
+  return cep.length === 8;
 };
 
 const url = 'https://viacep.com.br/ws/';
@@ -93,15 +87,24 @@ function handleSetFieldsValue(data) {
 } 
 
 document.querySelector('#cep').addEventListener('blur', async (event)=>{
-  event.preventDefault()
+  event.preventDefault();
   const cepInput = event.target.value;
 
   const isValidCep = handleValidateCep(cepInput);
-  if (!isValidCep) {
+
+  if(!isValidCep) {
+    addIsInvalidFieldClass('cep');
     return;
   }
 
   const data = await getAddressDataByCep(cepInput);
+
+  if (data.erro === 'true') {
+    addIsInvalidFieldClass('cep');
+    return;
+  }
+
+  removeIsInvalidFieldClass('cep');
   handleSetFieldsValue(data);
 });
 
@@ -110,6 +113,24 @@ function addIsInvalidFieldClass(id) {
 }
 function removeIsInvalidFieldClass(id){
   document.querySelector(`#${id}`).classList.remove('invalid-field');
+}
+
+const modal = {
+  open() {
+      //abrir modal
+      //add class active ao modal
+      document
+          .querySelector('.modal-overlay')
+          .classList.add('active')
+
+  },
+  close() {
+      //fechar modal
+      //remover a class active do modal
+      document
+          .querySelector('.modal-overlay')
+          .classList.remove('active')
+  }
 }
 
 
@@ -149,7 +170,7 @@ function saveForm(event){
   const newLine = `
   <td>${data.cnpj}</td>
   <td>${data.name}</td>
-  <td><a>Edit</a></td>
+  <td><a href="#" onclick="modal.open()">Edit</a></td>
   `
   //criando um no tr
   const node = document.createElement('tr');
